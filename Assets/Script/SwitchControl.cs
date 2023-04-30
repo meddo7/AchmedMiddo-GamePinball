@@ -14,11 +14,13 @@ public class SwitchControl : MonoBehaviour
     public Collider bola;
     public Material on;
     public Material off;
+    public float score;
 
     private SwitchStates state;
     private Renderer renderer;
 
     public AudioManager audioManager;
+    public ScoreManager scoreManager;
 
     private void Start()
     {
@@ -60,13 +62,16 @@ public class SwitchControl : MonoBehaviour
         if (state == SwitchStates.on)
         {
             Set(false);
-            
+            scoreManager.Addscore(score);
+
         }
         else
         {
             Set(true);
-            
+            scoreManager.Addscore(score);
+
         }
+        
     }
 
     private IEnumerator Blink(int times)

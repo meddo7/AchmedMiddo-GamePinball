@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class BumperControl : MonoBehaviour
 {
     public Collider bola;
     public float multiplier;
+    public float score;
 
     public AudioManager audioManager;
     public VFXManager vfxManager;
+    public ScoreManager scoreManager;
 
     private Animator animator;
 
@@ -33,6 +36,9 @@ public class BumperControl : MonoBehaviour
 
             //play vfx
             vfxManager.PlayVFX(collision.transform.position);
+
+            scoreManager.Addscore(score);
+
         }
     }
 }
