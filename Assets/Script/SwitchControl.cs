@@ -18,6 +18,8 @@ public class SwitchControl : MonoBehaviour
     private SwitchStates state;
     private Renderer renderer;
 
+    public AudioManager audioManager;
+
     private void Start()
     {
         renderer= GetComponent<Renderer>();
@@ -31,6 +33,7 @@ public class SwitchControl : MonoBehaviour
         if (other == bola)
         {
             Toggle();
+
         }
     }
 
@@ -44,7 +47,8 @@ public class SwitchControl : MonoBehaviour
             StopAllCoroutines();
         }
         else
-        {   
+        {
+            
             state = SwitchStates.off;  
             renderer.material = off;
             StartCoroutine(BlinkTimeStart(5));
@@ -56,10 +60,12 @@ public class SwitchControl : MonoBehaviour
         if (state == SwitchStates.on)
         {
             Set(false);
+            
         }
         else
         {
             Set(true);
+            
         }
     }
 
@@ -86,4 +92,6 @@ public class SwitchControl : MonoBehaviour
         yield return new WaitForSeconds(time);
         StartCoroutine(Blink(2));
     }
+
+
 }

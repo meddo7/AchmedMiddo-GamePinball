@@ -7,6 +7,9 @@ public class BumperControl : MonoBehaviour
     public Collider bola;
     public float multiplier;
 
+    public AudioManager audioManager;
+    public VFXManager vfxManager;
+
     private Animator animator;
 
     private void Start()
@@ -20,9 +23,16 @@ public class BumperControl : MonoBehaviour
         {
             Rigidbody bolarig = bola.GetComponent<Rigidbody>();
             bolarig.velocity *= multiplier;
+           
 
             //animasi
             animator.SetTrigger("hit");
+
+            //play sfx
+            audioManager.PlaySFX(collision.transform.position);
+
+            //play vfx
+            vfxManager.PlayVFX(collision.transform.position);
         }
     }
 }

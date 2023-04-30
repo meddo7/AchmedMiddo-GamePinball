@@ -61,6 +61,13 @@
     <Compile Include="Assets\Script\PaddleControl.cs" />
     <Compile Include="Assets\Script\BallControl.cs" />
     <Compile Include="Assets\Script\LauncherControl.cs" />
+    <Compile Include="Assets\Script\AudioManager.cs" />
+    <Compile Include="Assets\Script\FXController.cs" />
+    <Compile Include="Assets\Script\SFXaudioController.cs" />
+    <Compile Include="Assets\Script\VFXManager.cs" />
+    <Compile Include="Assets\Script\CameraControll.cs" />
+    <Compile Include="Assets\Script\TriggerZoomInControl.cs" />
+    <Compile Include="Assets\Script\TriggerZoomOutControl.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
